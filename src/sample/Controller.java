@@ -17,7 +17,7 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 public class Controller implements Initializable {
-    private static MediaPlayer player, player2, player3, player4, player5, player6;
+    private static MediaPlayer player, player2, player3, player4, player5, player6, szum;
 
 
     //-------------------------------------------------paski od częstotliwości
@@ -88,6 +88,7 @@ public class Controller implements Initializable {
             player4.stop();
             player5.stop();
             player6.stop();
+            szum.stop();
         }
     }
 
@@ -144,6 +145,13 @@ public class Controller implements Initializable {
             balance.setMax(1);
             balance.setValue(player6.getBalance());
 
+            Media media7 = new Media(getClass().getResource("/sample/resources/szum.mp3").toURI().toString());
+            szum = new MediaPlayer(media7);
+            volume.setValue(szum.getVolume() * 100);
+            balance.setMin(-1);
+            balance.setMax(1);
+            balance.setValue(szum.getBalance());
+
 
             volume.valueProperty().addListener(new InvalidationListener() {
                 @Override
@@ -154,6 +162,7 @@ public class Controller implements Initializable {
                     player4.setVolume(volume.getValue() / 200);
                     player5.setVolume(volume.getValue() / 200);
                     player6.setVolume(volume.getValue() / 200);
+                    szum.setVolume(volume.getValue() / 200);
                 }
             });
 
@@ -166,6 +175,7 @@ public class Controller implements Initializable {
                     player4.setBalance(balance.getValue());
                     player5.setBalance(balance.getValue());
                     player6.setBalance(balance.getValue());
+                    szum.setBalance(balance.getValue());
                 }
             });
 
@@ -188,10 +198,16 @@ public class Controller implements Initializable {
                     if (uButton.isSelected()) {
                         uPasek.setTranslateX(deg / 2);
                         if (deg > -600 && deg < -400) {
+                            szum.stop();
                             player.play();
-                        } else player.stop();
+                        }
+                        else {
+                            player.stop();
+                            szum.play();
+                        }
 
                         if (deg > 400 && deg < 600) {
+                            szum.stop();
                             player2.play();
                         } else player2.stop();
                     } else {
@@ -202,12 +218,19 @@ public class Controller implements Initializable {
                     if (dButton.isSelected()) {
                         dPasek.setTranslateX(deg / 2);
                         if (deg > -300 && deg < -200) {
+                            szum.stop();
                             player3.play();
-                        } else player3.stop();
+                        } else {
+                            player3.stop();
+                            szum.play();
+                        }
 
                         if (deg > 250 && deg < 390) {
+                            szum.stop();
                             player4.play();
-                        } else player4.stop();
+                        } else {
+                            player4.stop();
+                        }
                     } else {
                         player3.stop();
                         player4.stop();
@@ -216,18 +239,27 @@ public class Controller implements Initializable {
                    if (sButton.isSelected()) {
                         sPasek.setTranslateX(deg / 2);
                         if (deg > 0 && deg < 200) {
+                            szum.stop();
                             player5.play();
-                        } else player5.stop();
-                    } else {
-                        player5.stop();
+                        } else {
+
+                            szum.play();
+                            player5.stop();
+                    } }else {
+                       player5.stop();
                     }
                     //------- kolejny
                     if (kButton.isSelected()) {
                         kPasek.setTranslateX(deg / 2);
                         if (deg > -200 && deg < -50) {
+
+                            szum.stop();
                             player6.play();
-                        } else player6.stop();
-                    } else {
+                        } else {
+
+                            szum.play();
+                            player6.stop();
+                        } }else {
                         player6.stop();
                     }
                 }
