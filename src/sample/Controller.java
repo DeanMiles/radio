@@ -6,18 +6,13 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.Slider;
-import javafx.scene.control.ToggleButton;
-import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import javafx.scene.paint.Color;
-import javafx.scene.paint.ImagePattern;
-import javafx.scene.shape.Circle;
 import javafx.scene.shape.Rectangle;
 
-import java.awt.event.ActionEvent;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -107,42 +102,42 @@ public class Controller implements Initializable {
 
             //--------------------------------------------------------ładowanie piosenek i ustawianie paska głośności
 
-            Media media = new Media(getClass().getResource("queen.mp3").toURI().toString());
+            Media media = new Media(getClass().getResource("/sample/resources/queen.mp3").toURI().toString());
             player = new MediaPlayer(media);
             volume.setValue(player.getVolume() * 100);
             balance.setMin(-1);
             balance.setMax(1);
             balance.setValue(player.getBalance());
 
-            Media media2 = new Media(getClass().getResource("zombie.mp3").toURI().toString());
+            Media media2 = new Media(getClass().getResource("/sample/resources/zombie.mp3").toURI().toString());
             player2 = new MediaPlayer(media2);
             volume.setValue(player2.getVolume() * 100);
             balance.setMin(-1);
             balance.setMax(1);
             balance.setValue(player2.getBalance());
 
-            Media media3 = new Media(getClass().getResource("hotel.mp3").toURI().toString());
+            Media media3 = new Media(getClass().getResource("/sample/resources/hotel.mp3").toURI().toString());
             player3 = new MediaPlayer(media3);
             volume.setValue(player3.getVolume() * 100);
             balance.setMin(-1);
             balance.setMax(1);
             balance.setValue(player3.getBalance());
 
-            Media media4 = new Media(getClass().getResource("eminem.mp3").toURI().toString());
+            Media media4 = new Media(getClass().getResource("/sample/resources/eminem.mp3").toURI().toString());
             player4 = new MediaPlayer(media4);
             volume.setValue(player4.getVolume() * 100);
             balance.setMin(-1);
             balance.setMax(1);
             balance.setValue(player4.getBalance());
 
-            Media media5 = new Media(getClass().getResource("sweet.mp3").toURI().toString());
+            Media media5 = new Media(getClass().getResource("/sample/resources/sweet.mp3").toURI().toString());
             player5 = new MediaPlayer(media5);
             volume.setValue(player5.getVolume() * 100);
             balance.setMin(-1);
             balance.setMax(1);
             balance.setValue(player5.getBalance());
 
-            Media media6 = new Media(getClass().getResource("allstar.mp3").toURI().toString());
+            Media media6 = new Media(getClass().getResource("/sample/resources/allstar.mp3").toURI().toString());
             player6 = new MediaPlayer(media6);
             volume.setValue(player6.getVolume() * 100);
             balance.setMin(-1);

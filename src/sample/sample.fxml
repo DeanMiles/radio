@@ -96,7 +96,7 @@
             </Label>
             <ImageView fx:id="HZ" fitHeight="91.0" fitWidth="62.0" onMouseDragged="#handleMouse" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="8" GridPane.rowIndex="1">
                <image>
-                  <Image url="@../sample/knob_Base.png" />
+                  <Image url="@resources/knob_Base.png" />
                </image>
             </ImageView>
          </children>
