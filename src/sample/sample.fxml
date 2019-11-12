@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.shape.Rectangle?>
+
+<BorderPane maxHeight="400.0" maxWidth="600.0" minHeight="400.0" minWidth="600.0" prefHeight="400.0" prefWidth="600.0" styleClass="border" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+   <left>
+      <GridPane styleClass="grid" BorderPane.alignment="CENTER">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="135.0" minWidth="10.0" prefWidth="98.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="102.0" minWidth="10.0" prefWidth="102.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="102.0" minWidth="10.0" prefWidth="102.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="102.0" minWidth="10.0" prefWidth="102.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="102.0" minWidth="10.0" prefWidth="102.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="102.0" minWidth="10.0" prefWidth="102.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="102.0" minWidth="10.0" prefWidth="102.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="102.0" minWidth="10.0" prefWidth="102.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="102.0" minWidth="10.0" prefWidth="102.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints maxHeight="117.0" minHeight="10.0" prefHeight="87.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="126.0" minHeight="10.0" prefHeight="96.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="113.0" minHeight="10.0" prefHeight="93.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <ToggleButton fx:id="toogle" mnemonicParsing="false" onAction="#OnOff" prefHeight="50.0" prefWidth="50.0" styleClass="toogle" GridPane.rowIndex="1">
+               <GridPane.margin>
+                  <Insets left="10.0" />
+               </GridPane.margin>
+            </ToggleButton>
+            <Slider fx:id="volume"  orientation="VERTICAL" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <GridPane.margin>
+                  <Insets left="20.0" />
+               </GridPane.margin>
+            </Slider>
+            <Slider fx:id="balance"  orientation="HORIZONTAL" value="50" GridPane.columnIndex="2" GridPane.rowIndex="1">
+               <GridPane.margin>
+                  <Insets left="0.0" />
+               </GridPane.margin>
+            </Slider>
+            <RadioButton fx:id="uButton" mnemonicParsing="false" prefHeight="26.0" prefWidth="38.0" text="U" textFill="WHITE" GridPane.columnIndex="3" GridPane.rowIndex="1">
+               <GridPane.margin>
+                  <Insets left="40.0" />
+               </GridPane.margin>
+               <toggleGroup>
+                  <ToggleGroup fx:id="UDSK" />
+               </toggleGroup>
+            </RadioButton>
+            <RadioButton fx:id="dButton" mnemonicParsing="false" text="D" textFill="WHITE" toggleGroup="$UDSK" GridPane.columnIndex="4" GridPane.rowIndex="1">
+               <GridPane.margin>
+                  <Insets left="30.0" />
+               </GridPane.margin>
+            </RadioButton>
+            <RadioButton fx:id="sButton" mnemonicParsing="false" text="S" textFill="WHITE" toggleGroup="$UDSK" GridPane.columnIndex="5" GridPane.rowIndex="1">
+               <GridPane.margin>
+                  <Insets left="20.0" />
+               </GridPane.margin>
+            </RadioButton>
+            <RadioButton fx:id="kButton" mnemonicParsing="false" text="K" textFill="WHITE" toggleGroup="$UDSK" GridPane.columnIndex="6" GridPane.rowIndex="1">
+               <GridPane.margin>
+                  <Insets left="15.0" />
+               </GridPane.margin>
+            </RadioButton>
+            <Label text="Volume" textFill="WHITE" GridPane.columnIndex="1">
+               <GridPane.margin>
+                  <Insets left="10.0" top="30.0" />
+               </GridPane.margin>
+            </Label>
+            <Label text="Balance" textFill="WHITE" GridPane.columnIndex="2">
+               <GridPane.margin>
+                  <Insets left="15.0" top="30.0" />
+               </GridPane.margin>
+            </Label>
+            <Label text="On/Off" textFill="WHITE">
+               <GridPane.margin>
+                  <Insets left="10.0" top="30.0" />
+               </GridPane.margin>
+            </Label>
+            <Label text="Hz" textFill="WHITE" GridPane.columnIndex="8">
+               <GridPane.margin>
+                  <Insets left="20.0" top="30.0" />
+               </GridPane.margin>
+            </Label>
+            <ImageView fx:id="HZ" fitHeight="91.0" fitWidth="62.0" onMouseDragged="#handleMouse" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="8" GridPane.rowIndex="1">
+               <image>
+                  <Image url="@../sample/knob_Base.png" />
+               </image>
+            </ImageView>
+         </children>
+      </GridPane>
+   </left>
+   <top>
+      <StackPane maxWidth="500.0" prefHeight="113.0" prefWidth="440.0" BorderPane.alignment="CENTER">
+         <children>
+            <Rectangle fx:id="pasek1" arcHeight="20.0" arcWidth="20.0" fill="WHITE" height="23.0" stroke="BLACK" strokeType="INSIDE" width="600.0" BorderPane.alignment="TOP_CENTER" StackPane.alignment="TOP_CENTER">
+               <StackPane.margin>
+                  <Insets />
+               </StackPane.margin>
+            </Rectangle>
+            <Rectangle fx:id="pasek4" arcHeight="20.0" arcWidth="20.0" fill="WHITE" height="23.0" stroke="BLACK" strokeType="INSIDE" width="600.0" StackPane.alignment="TOP_CENTER">
+               <StackPane.margin>
+                  <Insets top="90.0" />
+               </StackPane.margin>
+            </Rectangle>
+            <Rectangle fx:id="pasek3" arcHeight="20.0" arcWidth="20.0" fill="WHITE" height="23.0" stroke="BLACK" strokeType="INSIDE" width="604.0" StackPane.alignment="TOP_CENTER">
+               <StackPane.margin>
+                  <Insets top="60.0" />
+               </StackPane.margin>
+            </Rectangle>
+            <Rectangle fx:id="pasek2" arcHeight="20.0" arcWidth="20.0" fill="WHITE" height="23.0" stroke="BLACK" strokeType="INSIDE" width="604.0" StackPane.alignment="TOP_CENTER">
+               <StackPane.margin>
+                  <Insets top="30.0" />
+               </StackPane.margin>
+            </Rectangle>
+            <Rectangle fx:id="uPasek" arcHeight="5.0" arcWidth="5.0" fill="RED" height="22.0" stroke="BLACK" strokeType="INSIDE" width="8.0" StackPane.alignment="TOP_CENTER">
+               <StackPane.margin>
+                  <Insets />
+               </StackPane.margin></Rectangle>
+            <Rectangle fx:id="kPasek" arcHeight="5.0" arcWidth="5.0" fill="RED" height="22.0" stroke="BLACK" strokeType="INSIDE" width="8.0" StackPane.alignment="TOP_CENTER">
+               <StackPane.margin>
+                  <Insets top="90.0" />
+               </StackPane.margin>
+            </Rectangle>
+            <Rectangle fx:id="sPasek" arcHeight="5.0" arcWidth="5.0" fill="RED" height="22.0" stroke="BLACK" strokeType="INSIDE" width="8.0" StackPane.alignment="TOP_CENTER">
+               <StackPane.margin>
+                  <Insets top="60.0" />
+               </StackPane.margin>
+            </Rectangle>
+            <Rectangle fx:id="dPasek" arcHeight="5.0" arcWidth="5.0" fill="RED" height="22.0" stroke="BLACK" strokeType="INSIDE" width="8.0" StackPane.alignment="TOP_CENTER">
+               <StackPane.margin>
+                  <Insets top="30.0" />
+               </StackPane.margin>
+            </Rectangle>
+         </children>
+      </StackPane>
+   </top>
+    <stylesheets>
+        <URL value="@style.css" />
+    </stylesheets>
+
+</BorderPane>

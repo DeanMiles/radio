@@ -1,0 +1,19 @@
+.border{
+    -fx-background-color: #33210a;
+}
+
+.root{
+    -fx-color: white;
+}
+
+.toogle{
+    -fx-background-radius: 45;
+}
+
+.toogle:hover{
+    -fx-background-color: #ccc;
+}
+
+.HZ{
+    -fx-border-radius: 45;
+}
